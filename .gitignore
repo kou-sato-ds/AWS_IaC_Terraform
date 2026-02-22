@@ -1,5 +1,12 @@
+# Terraformの一時フォルダ（巨大なので無視）
 .terraform/
+
+# 状態管理ファイル（機密情報が含まれるため、絶対にGitHubに上げない）
 *.tfstate
 *.tfstate.backup
-terraform.tfvars
-.terraform.lock.hcl
+
+# 変数ファイル（パスワードなどを書く可能性があるため無視）
+*.tfvars
+*.tfvars.json
+
+# --- .terraform.lock.hcl は「含める」のが今の主流なので、ここには書きません ---
