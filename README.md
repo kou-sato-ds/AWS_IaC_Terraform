@@ -1,7 +1,4 @@
 ![Terraform CI](https://github.com/kou-sato-ds/AWS_IaC_Terraform/actions/workflows/terraform-ci.yml/badge.svg)
-
-```markdown
-
 # 🏗️ AWS Infrastructure as Code (Terraform) - Data Platform
 
 AWS Certified Data Engineer - Associate (DEA) の要件に基づき、**「セキュアで再利用性の高いデータレイク基盤」**をTerraformで構築したプロジェクトです。
@@ -66,4 +63,5 @@ graph LR
 **Kou Sato (Moheji)**
 データエンジニア / データサイエンティスト
 「技術をビジネスの価値に変換する」をモットーに、IaCからMLモデル構築まで一貫したデリバリーを追求しています。
+
 ```
