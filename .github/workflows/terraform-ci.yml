@@ -1,0 +1,33 @@
+name: 'Terraform CI'
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  terraform:
+    name: 'Terraform Quality Check'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.5.0 # 使用しているバージョンに合わせて調整してください
+
+    - name: Terraform Format
+      run: terraform fmt -check -recursive
+      # インデントや形式が崩れていないかチェックします
+
+    - name: Terraform Init
+      run: terraform init -backend=false
+      # 初期化ができるかチェックします（実際のAWS認証は不要なモード）
+
+    - name: Terraform Validate
+      run: terraform validate
+      # 構文に間違いがないか最終チェックします
